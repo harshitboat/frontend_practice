@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rectangle Animation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #888;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: royalblue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: moveRect 4s linear infinite;
+    }
+
+    @keyframes moveRect {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(250px, 0); }   /* move right */
+      50%  { transform: translate(250px, 150px); } /* move down */
+      75%  { transform: translate(0, 150px); }    /* move left */
+      100% { transform: translate(0, 0); }       /* move up */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
