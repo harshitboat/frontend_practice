@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spinning Box on Hover</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background: dodgerblue;
+      position: relative;
+      transition: transform 4s linear;
+    }
+
+    /* Spin animation keyframes */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Rectangle path keyframes */
+    @keyframes moveRect {
+      0%   { transform: translate(0, 0) rotate(0deg); }
+      25%  { transform: translate(250px, 0) rotate(90deg); }
+      50%  { transform: translate(250px, 150px) rotate(180deg); }
+      75%  { transform: translate(0, 150px) rotate(270deg); }
+      100% { transform: translate(0, 0) rotate(360deg); }
+    }
+
+    /* Trigger animation on hover */
+    .box:hover {
+      animation: moveRect 4s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
